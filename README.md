@@ -296,8 +296,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   prominent in practice (and arguably a bit more readable).
 
 * <a name="no-trailing-backslash"></a>
-  Avoid line continuation `\` where not required. In practice, avoid using
-  line continuations for anything but string concatenation.
+  Avoid using line continuation (`\`).
 <sup>[[link](#no-trailing-backslash)]</sup>
 
   ```Ruby
@@ -305,49 +304,38 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   result = 1 - \
            2
 
-  # good (but still ugly as hell)
   result = 1 \
            - 2
 
+  # passable
   long_string = 'First part of the long string' \
+                ' and second part of the long string'
+
+  # good
+  long_string = 'First part of the long string' +
                 ' and second part of the long string'
   ```
 
 * <a name="consistent-multi-line-chains"></a>
-    Adopt a consistent multi-line method chaining style. There are two
-    popular styles in the Ruby community, both of which are considered
-    good:  leading `.` (Option A) and trailing `.` (Option B).
+  When continuing a chained method invocation on another line keep the `.`
+  on the second line.
 <sup>[[link](#consistent-multi-line-chains)]</sup>
 
-  * **(Option A)** When continuing a chained method invocation on
-    another line keep the `.` on the second line.
+  ```Ruby
+  # bad:  need to consult first line to understand second line
+  one.two.three.
+    four
 
-    ```Ruby
-    # bad:  need to consult first line to understand second line
-    one.two.three.
-      four
+  # passable:  it's clear what's going on the second line
+  one.two.three
+    .four
 
-    # good:  it's immediately clear what's going on the second line
-    one.two.three
-      .four
-    ```
-
-  * **(Option B)** When continuing a chained method invocation on another line,
-    include the `.` on the first line to indicate that the
-    expression continues.
-
-    ```Ruby
-    # bad:  need to read ahead to the second line to know that the chain continues
-    one.two.three
-      .four
-
-    # good:  it's immediately clear that the expression continues beyond the first line
-    one.two.three.
-      four
-    ```
-
-  A discussion on the merits of both alternative styles can be found
-  [here](https://github.com/bbatsov/ruby-style-guide/pull/176).
+  # good:  all lines are more obvious now
+  one
+    .two
+    .three
+    .four
+  ```
 
 * <a name="no-double-indent"></a>
     Align the parameters of a method call if they span more than one
