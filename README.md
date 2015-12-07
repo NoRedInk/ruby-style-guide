@@ -339,13 +339,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="no-double-indent"></a>
     Align the parameters of a method call if they span more than one
-    line. When aligning parameters is not appropriate due to line-length
-    constraints, single indent for the lines after the first is also
-    acceptable.
+    line. When aligning parameters, single indent parameter lines.
 <sup>[[link](#no-double-indent)]</sup>
 
   ```Ruby
-  # starting point (line is too long)
+  # bad:  line is too long
   def send_mail(source)
     Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
   end
@@ -359,7 +357,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
         body: source.text)
   end
 
-  # good
+  # bad:  random indention that can easily cause all lines to change
   def send_mail(source)
     Mailer.deliver(to: 'bob@example.com',
                    from: 'us@example.com',
@@ -387,16 +385,16 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   menu_item = ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
 
+  # passable
+  menu_item =
+    ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
+     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
+
   # good
   menu_item = [
     'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam'
   ]
-
-  # good
-  menu_item =
-    ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
-     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
   ```
 
 * <a name="underscores-in-numerics"></a>
