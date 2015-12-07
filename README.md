@@ -82,7 +82,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   class FooError < StandardError
   end
 
-  # okish
+  # passable
   class FooError < StandardError; end
 
   # good
@@ -100,13 +100,13 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   # bad
   def too_much; something; something_else; end
 
-  # okish:  notice that the first ; is required
+  # passable:  notice that the first ; is required
   def no_braces_method; body end
 
-  # okish:  notice that the second ; is optional
+  # passable:  notice that the second ; is optional
   def no_braces_method; body; end
 
-  # okish:  valid syntax, but no ; makes it kind of hard to read
+  # passable:  valid syntax, but no ; makes it kind of hard to read
   def some_method() body end
 
   # good
