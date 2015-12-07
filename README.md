@@ -25,11 +25,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#utf-8)]</sup>
 
 * <a name="spaces-indentation"></a>
-  Use two **spaces** per indentation level (aka soft tabs). No hard tabs.
+  Use two **spaces** per indentation level (a.k.a. soft tabs). No hard tabs.
 <sup>[[link](#spaces-indentation)]</sup>
 
   ```Ruby
-  # bad - four spaces
+  # bad: four spaces
   def some_method
       do_something
   end
@@ -54,7 +54,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     ```
 
 * <a name="no-semicolon"></a>
-  Don't use `;` to separate statements and expressions. As a corollary - use one
+  Don't use `;` to separate statements and expressions. As a corollary, use one
   expression per line.
 <sup>[[link](#no-semicolon)]</sup>
 
@@ -92,7 +92,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 * <a name="no-single-line-methods"></a>
   Avoid single-line methods. Although they are somewhat popular in the wild,
   there are a few peculiarities about their definition syntax that make their
-  use undesirable. At any rate - there should be no more than one expression in
+  use undesirable. At any rate, there should be no more than one expression in
   a single-line method.
 <sup>[[link](#no-single-line-methods)]</sup>
 
@@ -100,13 +100,13 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   # bad
   def too_much; something; something_else; end
 
-  # okish - notice that the first ; is required
+  # okish:  notice that the first ; is required
   def no_braces_method; body end
 
-  # okish - notice that the second ; is optional
+  # okish:  notice that the second ; is optional
   def no_braces_method; body; end
 
-  # okish - valid syntax, but no ; makes it kind of hard to read
+  # okish:  valid syntax, but no ; makes it kind of hard to read
   def some_method() body end
 
   # good
@@ -150,17 +150,17 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   For hash literals two styles are considered acceptable.
 
   ```Ruby
-  # good - space after { and before }
+  # good:  space after { and before }
   { one: 1, two: 2 }
 
-  # good - no space after { and before }
+  # good:  no space after { and before }
   {one: 1, two: 2}
   ```
 
   The first variant is slightly more readable (and arguably more
   popular in the Ruby community in general). The second variant has
   the advantage of adding visual difference between block and hash
-  literals. Whichever one you pick - apply it consistently.
+  literals. Whichever one you pick, apply it consistently.
 
 * <a name="no-spaces-braces"></a>
   No spaces after `(`, `[` or before `]`, `)`.
@@ -239,7 +239,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#indent-conditional-assignment)]</sup>
 
   ```Ruby
-  # bad - pretty convoluted
+  # bad:  pretty convoluted
   kind = case year
   when 1850..1889 then 'Blues'
   when 1890..1909 then 'Ragtime'
@@ -255,7 +255,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     calc_something_else
   end
 
-  # good - it's apparent what's going on
+  # good:  it's apparent what's going on
   kind = case year
          when 1850..1889 then 'Blues'
          when 1890..1909 then 'Ragtime'
@@ -315,7 +315,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#no-trailing-params-comma)]</sup>
 
   ```Ruby
-  # bad - easier to move/add/remove parameters, but still not preferred
+  # bad:  easier to move/add/remove parameters, but still not preferred
   some_method(
                size,
                count,
@@ -370,18 +370,18 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 * <a name="consistent-multi-line-chains"></a>
     Adopt a consistent multi-line method chaining style. There are two
     popular styles in the Ruby community, both of which are considered
-    good - leading `.` (Option A) and trailing `.` (Option B).
+    good:  leading `.` (Option A) and trailing `.` (Option B).
 <sup>[[link](#consistent-multi-line-chains)]</sup>
 
   * **(Option A)** When continuing a chained method invocation on
     another line keep the `.` on the second line.
 
     ```Ruby
-    # bad - need to consult first line to understand second line
+    # bad:  need to consult first line to understand second line
     one.two.three.
       four
 
-    # good - it's immediately clear what's going on the second line
+    # good:  it's immediately clear what's going on the second line
     one.two.three
       .four
     ```
@@ -391,11 +391,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     expression continues.
 
     ```Ruby
-    # bad - need to read ahead to the second line to know that the chain continues
+    # bad:  need to read ahead to the second line to know that the chain continues
     one.two.three
       .four
 
-    # good - it's immediately clear that the expression continues beyond the first line
+    # good:  it's immediately clear that the expression continues beyond the first line
     one.two.three.
       four
     ```
@@ -416,7 +416,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
   end
 
-  # bad (double indent)
+  # bad:  double indent
   def send_mail(source)
     Mailer.deliver(
         to: 'bob@example.com',
@@ -433,7 +433,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
                    body: source.text)
   end
 
-  # good (normal indent)
+  # good:  normal indent
   def send_mail(source)
     Mailer.deliver(
       to: 'bob@example.com',
@@ -449,7 +449,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#align-multiline-arrays)]</sup>
 
   ```Ruby
-  # bad - single indent
+  # bad:  single indent
   menu_item = ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
 
@@ -470,10 +470,10 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#underscores-in-numerics)]</sup>
 
   ```Ruby
-  # bad - how many 0s are there?
+  # bad:  how many 0s are there?
   num = 1000000
 
-  # good - much easier to parse for the human brain
+  # good:  much easier to parse for the human brain
   num = 1_000_000
   ```
 
@@ -601,7 +601,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   c = 'baz'
   d = 'foobar'
 
-  # good - swapping variable assignment
+  # good:  swapping variable assignment
   # Swapping variable assignment is a special case because it will allow you to
   # swap the values that are assigned to each variable.
   a = 'foo'
@@ -611,14 +611,14 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   puts a # => 'bar'
   puts b # => 'foo'
 
-  # good - method return
+  # good:  method return
   def multi_return
     [1, 2]
   end
 
   first, second = multi_return
 
-  # good - use with splat
+  # good:  use with splat
   first, *list = [1, 2, 3, 4]
 
   hello_array = *'Hello'
@@ -651,7 +651,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 * <a name="no-for-loops"></a>
     Do not use `for`, unless you know exactly why. Most of the time iterators
     should be used instead. `for` is implemented in terms of `each` (so
-    you're adding a level of indirection), but with a twist - `for`
+    you're adding a level of indirection), but with a twist:  `for`
     doesn't introduce a new scope (unlike `each`) and variables defined
     in its block will be visible outside it.
 <sup>[[link](#no-for-loops)]</sup>
@@ -790,7 +790,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#bang-not-not)]</sup>
 
   ```Ruby
-  # bad - parentheses are required because of op precedence
+  # bad:  parentheses are required because of op precedence
   x = (not something)
 
   # good
@@ -1156,7 +1156,7 @@ condition](#safe-assignment-in-condition).
   ```
 
   Some will argue that multiline chaining would look OK with the use of {...},
-  but they should ask themselves - is this code really readable and can the
+  but they should ask themselves, is this code really readable and can the
   blocks' contents be extracted into nifty methods?
 
 * <a name="block-argument"></a>
@@ -1267,7 +1267,7 @@ condition](#safe-assignment-in-condition).
 <sup>[[link](#safe-assignment-in-condition)]</sup>
 
   ```Ruby
-  # bad (+ a warning)
+  # bad (also a warning)
   if v = array.grep(/foo/)
     do_something(v)
     ...
@@ -1320,7 +1320,7 @@ condition](#safe-assignment-in-condition).
   # bad
   name = 'Bozhidar' unless name
 
-  # good - set name to 'Bozhidar', only if it's nil or false
+  # good:  set name to 'Bozhidar', only if it's nil or false
   name ||= 'Bozhidar'
   ```
 
@@ -1330,7 +1330,7 @@ condition](#safe-assignment-in-condition).
 <sup>[[link](#no-double-pipes-for-bools)]</sup>
 
   ```Ruby
-  # bad - would set enabled to true even if it was false
+  # bad:  would set enabled to true even if it was false
   enabled ||= true
 
   # good
@@ -1386,7 +1386,7 @@ condition](#safe-assignment-in-condition).
 <sup>[[link](#eql)]</sup>
 
   ```Ruby
-  # bad - eql? is the same as == for strings
+  # bad:  eql? is the same as == for strings
   'ruby'.eql? some_str
 
   # good
@@ -1448,7 +1448,7 @@ condition](#safe-assignment-in-condition).
     bar(x)
   end
 
-  # good - the same as the previous, but no bar redefinition on every foo call
+  # good:  the same as the previous, but no bar redefinition on every foo call
   def bar(y)
     # body omitted
   end
@@ -1533,11 +1533,11 @@ no parameters.
 <sup>[[link](#proc-call)]</sup>
 
   ```Ruby
-  # bad - looks similar to Enumeration access
+  # bad:  looks similar to Enumeration access
   l = ->(v) { puts v }
   l[1]
 
-  # also bad - uncommon syntax
+  # also bad:  uncommon syntax
   l = ->(v) { puts v }
   l.(1)
 
@@ -1713,7 +1713,7 @@ no parameters.
     # good
     do_something if something
 
-    # good - dealing with a boolean
+    # good:  dealing with a boolean
     def value_set?
       !@some_boolean.nil?
     end
@@ -1848,10 +1848,10 @@ no parameters.
 <sup>[[link](#english-identifiers)]</sup>
 
   ```Ruby
-  # bad - identifier using non-ascii characters
+  # bad:  identifier using non-ascii characters
   заплата = 1_000
 
-  # bad - identifier is a Bulgarian word, written with Latin letters (instead of Cyrillic)
+  # bad:  identifier is a Bulgarian word, written with Latin letters (instead of Cyrillic)
   zaplata = 1_000
 
   # good
@@ -1956,14 +1956,14 @@ no parameters.
 <sup>[[link](#bool-methods-qmark)]</sup>
 
 * <a name="dangerous-method-bang"></a>
-  The names of potentially *dangerous* methods (i.e. methods that modify
+  The names of potentially _dangerous_ methods (i.e. methods that modify
   `self` or the arguments, `exit!` (doesn't run the finalizers like `exit`
   does), etc.) should end with an exclamation mark if there exists a safe
-  version of that *dangerous* method.
+  version of that _dangerous_ method.
 <sup>[[link](#dangerous-method-bang)]</sup>
 
   ```Ruby
-  # bad - there is no matching 'safe' method
+  # bad:  there is no matching 'safe' method
   class Person
     def update!
     end
@@ -2354,7 +2354,7 @@ no parameters.
 <sup>[[link](#attr)]</sup>
 
   ```Ruby
-  # bad - creates a single attribute accessor (deprecated in 1.9)
+  # bad:  creates a single attribute accessor (deprecated in 1.9)
   attr :something, true
   attr :one, :two, :three # behaves as attr_reader
 
@@ -2481,7 +2481,7 @@ no parameters.
 * <a name="visibility"></a>
   Assign proper visibility levels to methods (`private`, `protected`) in
   accordance with their intended usage. Don't go off leaving everything `public`
-  (which is the default). After all we're coding in *Ruby* now, not in *Python*.
+  (which is the default). After all we're coding in Ruby now, not in Python.
 <sup>[[link](#visibility)]</sup>
 
 * <a name="indent-public-private-protected"></a>
@@ -2631,7 +2631,7 @@ no parameters.
   # bad
   fail RuntimeError, 'message'
 
-  # good - signals a RuntimeError by default
+  # good:  signals a RuntimeError by default
   fail 'message'
   ```
 
@@ -2739,10 +2739,10 @@ no parameters.
 <sup>[[link](#no-rescue-modifiers)]</sup>
 
   ```Ruby
-  # bad - this catches exceptions of StandardError class and its descendant classes
+  # bad:  this catches exceptions of StandardError class and its descendant classes
   read_file rescue handle_error($!)
 
-  # good - this catches only the exceptions of Errno::ENOENT class and its descendant classes
+  # good:  this catches only the exceptions of Errno::ENOENT class and its descendant classes
   def foo
     read_file
   rescue Errno::ENOENT => ex
@@ -2847,12 +2847,12 @@ resource cleanup when possible.
 <sup>[[link](#auto-release-resources)]</sup>
 
   ```Ruby
-  # bad - you need to close the file descriptor explicitly
+  # bad:  you need to close the file descriptor explicitly
   f = File.open('testfile')
     # ...
   f.close
 
-  # good - the file descriptor is closed automatically
+  # good:  the file descriptor is closed automatically
   File.open('testfile') do |f|
     # ...
   end
@@ -2914,7 +2914,7 @@ resource cleanup when possible.
 <sup>[[link](#no-trailing-array-commas)]</sup>
 
   ```Ruby
-  # bad - easier to move/add/remove items, but still not preferred
+  # bad:  easier to move/add/remove items, but still not preferred
   VALUES = [
              1001,
              2020,
@@ -3014,11 +3014,11 @@ resource cleanup when possible.
 
   ```Ruby
   heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
-  # bad - if we make a mistake we might not spot it right away
+  # bad:  if we make a mistake we might not spot it right away
   heroes[:batman] # => 'Bruce Wayne'
   heroes[:supermann] # => nil
 
-  # good - fetch raises a KeyError making the problem obvious
+  # good:  fetch raises a KeyError making the problem obvious
   heroes.fetch(:supermann)
   ```
 
@@ -3030,10 +3030,10 @@ resource cleanup when possible.
   ```Ruby
   batman = { name: 'Bruce Wayne', is_evil: false }
 
-  # bad - if we just use || operator with falsy value we won't get the expected result
+  # bad:  if we just use || operator with falsy value we won't get the expected result
   batman[:is_evil] || true # => true
 
-  # good - fetch work correctly with falsy values
+  # good:  fetch work correctly with falsy values
   batman.fetch(:is_evil, true) # => false
   ```
 
@@ -3045,11 +3045,11 @@ resource cleanup when possible.
   ```Ruby
   batman = { name: 'Bruce Wayne' }
 
-  # bad - if we use the default value, we eager evaluate it
+  # bad:  if we use the default value, we eager evaluate it
   # so it can slow the program down if done multiple times
   batman.fetch(:powers, obtain_batman_powers) # obtain_batman_powers is an expensive call
 
-  # good - blocks are lazy evaluated, so only triggered in case of KeyError exception
+  # good:  blocks are lazy evaluated, so only triggered in case of KeyError exception
   batman.fetch(:powers) { obtain_batman_powers }
   ```
 
@@ -3143,7 +3143,7 @@ resource cleanup when possible.
 
 * <a name="consistent-string-literals"></a>
   Adopt a consistent string literal quoting style. There are two popular
-  styles in the Ruby community, both of which are considered good - single
+  styles in the Ruby community, both of which are considered good:  single
   quotes by default (Option A) and double quotes by default (Option B).
 <sup>[[link](#consistent-string-literals)]</sup>
 
@@ -3174,7 +3174,7 @@ resource cleanup when possible.
 
 * <a name="no-character-literals"></a>
   Don't use the character literal syntax `?x`. Since Ruby 1.9 it's basically
-  redundant - `?x` would interpreted as `'x'` (a string with a single character
+  redundant:  `?x` would interpreted as `'x'` (a string with a single character
   in it).
 <sup>[[link](#no-character-literals)]</sup>
 
@@ -3200,7 +3200,7 @@ resource cleanup when possible.
       @last_name = last_name
     end
 
-    # bad - valid, but awkward
+    # bad:  valid, but awkward
     def to_s
       "#@first_name #@last_name"
     end
@@ -3403,19 +3403,19 @@ resource cleanup when possible.
 <sup>[[link](#percent-q-shorthand)]</sup>
 
   ```Ruby
-  # bad (no interpolation needed)
+  # bad:  no interpolation needed
   %(<div class="text">Some text</div>)
   # should be '<div class="text">Some text</div>'
 
-  # bad (no double-quotes)
+  # bad:  no double-quotes
   %(This is #{quality} style)
   # should be "This is #{quality} style"
 
-  # bad (multiple lines)
+  # bad:  multiple lines
   %(<div>\n<span class="big">#{exclamation}</span>\n</div>)
   # should be a heredoc.
 
-  # good (requires interpolation, has quotes, single line)
+  # good:  requires interpolation, has quotes, single line
   %(<tr><td class="name">#{name}</td>)
   ```
 
@@ -3605,9 +3605,9 @@ resource cleanup when possible.
   end
 
   linux_organization = Organization.find(...)
-  # BAD - violates privacy
+  # bad:  violates privacy
   linux_organization.send(:reset_token)
-  # GOOD - should throw an exception
+  # good:  should throw an exception
   linux_organization.public_send(:reset_token)
   ```
 
