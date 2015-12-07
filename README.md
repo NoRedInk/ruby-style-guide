@@ -41,7 +41,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="crlf"></a>
-  Use Unix-style line endings. (*BSD/Solaris/Linux/OS X users are covered by
+  Use Unix-style line endings. (BSD/Solaris/Linux/OS X users are covered by
   default, Windows users have to be extra careful.)
 <sup>[[link](#crlf)]</sup>
 
