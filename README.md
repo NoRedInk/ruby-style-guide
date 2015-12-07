@@ -89,43 +89,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   FooError = Class.new(StandardError)
   ```
 
-* <a name="no-single-line-methods"></a>
-  Avoid single-line methods. Although they are somewhat popular in the wild,
-  there are a few peculiarities about their definition syntax that make their
-  use undesirable. At any rate, there should be no more than one expression in
-  a single-line method.
-<sup>[[link](#no-single-line-methods)]</sup>
-
-  ```Ruby
-  # bad
-  def too_much; something; something_else; end
-
-  # passable:  notice that the first ; is required
-  def no_braces_method; body end
-
-  # passable:  notice that the second ; is optional
-  def no_braces_method; body; end
-
-  # passable:  valid syntax, but no ; makes it kind of hard to read
-  def some_method() body end
-
-  # good
-  def some_method
-    body
-  end
-  ```
-
-  One exception to the rule are empty-body methods.
-
-  ```Ruby
-  # good
-  def no_op; end
-  ```
-
 * <a name="spaces-operators"></a>
-  Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily readable code.
+  Use spaces around operators, after commas, colons and semicolons, and around
+  `{` and before `}` when used in blocks. Whitespace might be (mostly)
+  irrelevant to the Ruby interpreter, but its proper use is the key to writing
+  easily readable code.
 <sup>[[link](#spaces-operators)]</sup>
 
   ```Ruby
@@ -145,25 +113,10 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   e = M * c**2
   ```
 
-  `{` and `}` deserve a bit of clarification, since they are used
-  for block and hash literals, as well as string interpolation.
-  For hash literals two styles are considered acceptable.
-
-  ```Ruby
-  # good:  space after { and before }
-  { one: 1, two: 2 }
-
-  # good:  no space after { and before }
-  {one: 1, two: 2}
-  ```
-
-  The first variant is slightly more readable (and arguably more
-  popular in the Ruby community in general). The second variant has
-  the advantage of adding visual difference between block and hash
-  literals. Whichever one you pick, apply it consistently.
-
 * <a name="no-spaces-braces"></a>
-  No spaces after `(`, `[` or before `]`, `)`.
+  No spaces after `(`, `[`, or `{` when used for hash literals or interpolation.
+  No spaces before `]`, `)`, or `}` when used for hash literals
+  or interpolation.
 <sup>[[link](#no-spaces-braces)]</sup>
 
   ```Ruby
