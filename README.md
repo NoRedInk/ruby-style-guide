@@ -188,7 +188,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="indent-conditional-assignment"></a>
   When assigning the result of a conditional expression to a variable,
-  preserve the usual alignment of its branches.
+  move the conditional to a new line and indent one level.
 <sup>[[link](#indent-conditional-assignment)]</sup>
 
   ```Ruby
@@ -208,7 +208,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     calc_something_else
   end
 
-  # good:  it's apparent what's going on
+  # bad:  random indentation and all lines change with the variable name
   kind = case year
          when 1850..1889 then 'Blues'
          when 1890..1909 then 'Ragtime'
