@@ -21,11 +21,6 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 ## Source Code Layout
 
-> Nearly everybody is convinced that every style but their own is
-> ugly and unreadable. Leave out the "but their own" and they're
-> probably right... <br>
-> -- Jerry Coffin (on indentation)
-
 * <a name="utf-8"></a>
   Use `UTF-8` as the source file encoding.
 <sup>[[link](#utf-8)]</sup>
@@ -1849,10 +1844,6 @@ no parameters.
 
 ## Naming
 
-> The only real difficulties in programming are cache invalidation and
-> naming things. <br>
-> -- Phil Karlton
-
 * <a name="english-identifiers"></a>
   Name identifiers in English.
 <sup>[[link](#english-identifiers)]</sup>
@@ -2036,12 +2027,6 @@ no parameters.
 
 ## Comments
 
-> Good code is its own best documentation. As you're about to add a
-> comment, ask yourself, "How can I improve the code so that this
-> comment isn't needed?" Improve the code and then document it to make
-> it even clearer. <br>
-> -- Steve McConnell
-
 * <a name="no-comments"></a>
   Write self-documenting code and ignore the rest of this section. Seriously!
 <sup>[[link](#no-comments)]</sup>
@@ -2073,9 +2058,6 @@ no parameters.
   Keep existing comments up-to-date. An outdated comment is worse than no
   comment at all.
 <sup>[[link](#comment-upkeep)]</sup>
-
-> Good code is like a good joke - it needs no explanation. <br>
-> -- Russ Olsen
 
 * <a name="refactor-dont-comment"></a>
   Avoid writing comments to explain bad code. Refactor the code to make it
@@ -3310,10 +3292,6 @@ resource cleanup when possible.
   ```
 
 ## Regular Expressions
-
-> Some people, when confronted with a problem, think
-> "I know, I'll use regular expressions." Now they have two problems.<br>
-> -- Jamie Zawinski
 
 * <a name="no-regexp-for-plaintext"></a>
   Don't use regular expressions if you just need plain text search in string:
