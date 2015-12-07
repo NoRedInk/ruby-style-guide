@@ -263,18 +263,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-trailing-params-comma"></a>
-  Avoid comma after the last parameter in a method call, especially when the
-  parameters are not on separate lines.
+  Avoid a comma after the last parameter in a method call when the
+  parameters are on the same line.
 <sup>[[link](#no-trailing-params-comma)]</sup>
 
   ```Ruby
-  # bad:  easier to move/add/remove parameters, but still not preferred
-  some_method(
-               size,
-               count,
-               color,
-             )
-
   # bad
   some_method(size, count, color, )
 
