@@ -2060,7 +2060,7 @@ no parameters.
 
 * <a name="refactor-dont-comment"></a>
   Avoid writing comments to explain bad code. Refactor the code to make it
-  self-explanatory. (Do or do not - there is no try. --Yoda)
+  self-explanatory.
 <sup>[[link](#refactor-dont-comment)]</sup>
 
 ### Comment Annotations
