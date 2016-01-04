@@ -740,7 +740,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="if-as-a-modifier"></a>
   Favor modifier `if/unless` usage when you have a single-line body. Another
-  good alternative is the usage of control flow `and`/`or`/`not`.
+  good alternative is the usage of flow control `and`/`or`/`not`.
 <sup>[[link](#if-as-a-modifier)]</sup>
 
   ```Ruby
@@ -789,7 +789,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="unless-for-negatives"></a>
-  Favor `unless` over `if !` for negative conditions (or control flow `or`).
+  Favor `unless` over `if !` for negative conditions (or flow control `or`).
 <sup>[[link](#unless-for-negatives)]</sup>
 
   ```Ruby
