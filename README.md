@@ -847,7 +847,7 @@ Note that there is an exception to this rule, namely [safe assignment in
 condition](#safe-assignment-in-condition).
 
 * <a name="no-multiline-while-do"></a>
-  Do not use `while/until ... do` for multi-line `while`/`until`.
+  Do not use `while`/`until ... do` for multi-line `while`/`until`.
 <sup>[[link](#no-multiline-while-do)]</sup>
 
   ```Ruby
