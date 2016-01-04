@@ -490,7 +490,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="optional-arguments"></a>
     Define optional arguments at the end of the list of arguments.
-    Ruby has some unexpected results when calling methods that have
+    Results can be surprising when calling methods that have
     optional arguments at the front of the list.
 <sup>[[link](#optional-arguments)]</sup>
 
