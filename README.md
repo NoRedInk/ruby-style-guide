@@ -561,10 +561,9 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-for-loops"></a>
-    Do not use `for`, unless you know exactly why. Most of the time iterators
-    should be used instead. `for` is implemented in terms of `each` (so
-    you're adding a level of indirection), but with a twist:  `for`
-    doesn't introduce a new scope (unlike `each`) and variables defined
+    Do not use `for`. Iterators should be used instead. `for` is implemented in
+    terms of `each` (so you're adding a level of indirection), but with a twist:
+    `for` doesn't introduce a new scope (unlike `each`) and variables defined
     in its block will be visible outside it.
 <sup>[[link](#no-for-loops)]</sup>
 
