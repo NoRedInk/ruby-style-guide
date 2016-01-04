@@ -885,7 +885,7 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="until-for-negatives"></a>
-  Favor `until` over `while` for negative conditions.
+  Favor `until` over `while !...` for negative conditions.
 <sup>[[link](#until-for-negatives)]</sup>
 
   ```Ruby
