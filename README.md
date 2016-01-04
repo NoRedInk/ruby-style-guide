@@ -789,7 +789,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="unless-for-negatives"></a>
-  Favor `unless` over `if` for negative conditions (or control flow `||`).
+  Favor `unless` over `if !` for negative conditions (or control flow `or`).
 <sup>[[link](#unless-for-negatives)]</sup>
 
   ```Ruby
@@ -803,7 +803,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   do_something unless some_condition
 
   # another good option
-  some_condition || do_something
+  some_condition or do_something
   ```
 
 * <a name="no-else-with-unless"></a>
