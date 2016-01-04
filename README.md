@@ -740,7 +740,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="if-as-a-modifier"></a>
   Favor modifier `if/unless` usage when you have a single-line body. Another
-  good alternative is the usage of control flow `&&/||`.
+  good alternative is the usage of control flow `and`/`or`/`not`.
 <sup>[[link](#if-as-a-modifier)]</sup>
 
   ```Ruby
@@ -753,7 +753,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   do_something if some_condition
 
   # another good option
-  some_condition && do_something
+  some_condition and do_something
   ```
 
 * <a name="no-multiline-if-modifiers"></a>
