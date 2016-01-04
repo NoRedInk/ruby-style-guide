@@ -586,7 +586,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-then"></a>
-  Do not use `then` for multi-line `if/unless`.
+  Do not use `then` for multi-line `if`/`unless`.
 <sup>[[link](#no-then)]</sup>
 
   ```Ruby
@@ -622,7 +622,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="ternary-operator"></a>
-  Favor the ternary operator(`?:`) over `if/then/else/end` constructs.
+  Favor the ternary operator(`?:`) over `if`/`then`/`else`/`end` constructs.
   It's more common and obviously more concise.
 <sup>[[link](#ternary-operator)]</sup>
 
@@ -637,7 +637,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 * <a name="no-nested-ternary"></a>
   Use one expression per branch in a ternary operator. This
   also means that ternary operators must not be nested. Prefer
-  `if/else` constructs in these cases.
+  `if`/`else` constructs in these cases.
 <sup>[[link](#no-nested-ternary)]</sup>
 
   ```Ruby
