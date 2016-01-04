@@ -447,8 +447,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
 * <a name="double-colons"></a>
     Use `::` only to reference constants(this includes classes and
-    modules) and constructors (like `Array()` or `Nokogiri::HTML()`).
-    Do not use `::` for regular method invocation.
+    modules). Do not use `::` for regular method invocation.
 <sup>[[link](#double-colons)]</sup>
 
   ```Ruby
@@ -460,7 +459,6 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   SomeClass.some_method
   some_object.some_method
   SomeModule::SomeClass::SOME_CONST
-  SomeModule::SomeClass()
   ```
 
 * <a name="method-parens"></a>
