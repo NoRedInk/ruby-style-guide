@@ -776,7 +776,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-nested-modifiers"></a>
-  Avoid nested modifier `if/unless/while/until` usage. Favor `&&/||` if
+  Avoid nested modifier `if/unless/while/until` usage. Favor `&&`/`||` if
   appropriate.
 <sup>[[link](#no-nested-modifiers)]</sup>
 
