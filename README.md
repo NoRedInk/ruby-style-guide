@@ -735,11 +735,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-multiline-ternary"></a>
-  Avoid multi-line `?:` (the ternary operator); use `if/unless` instead.
+  Avoid multi-line `?:` (the ternary operator); use `if`/`unless` instead.
 <sup>[[link](#no-multiline-ternary)]</sup>
 
 * <a name="if-as-a-modifier"></a>
-  Favor modifier `if/unless` usage when you have a single-line body. Another
+  Favor modifier `if`/`unless` usage when you have a single-line body. Another
   good alternative is the usage of flow control `and`/`or`/`not`.
 <sup>[[link](#if-as-a-modifier)]</sup>
 
@@ -757,7 +757,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-multiline-if-modifiers"></a>
-  Avoid modifier `if/unless` usage at the end of a non-trivial multi-line
+  Avoid modifier `if`/`unless` usage at the end of a non-trivial multi-line
   block.
 <sup>[[link](#no-multiline-if-modifiers)]</sup>
 
@@ -776,7 +776,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-nested-modifiers"></a>
-  Avoid nested modifier `if/unless/while/until` usage. Favor `&&`/`||` if
+  Avoid nested modifier `if`/`unless`/`while`/`until` usage. Favor `&&`/`||` if
   appropriate.
 <sup>[[link](#no-nested-modifiers)]</sup>
 
@@ -789,7 +789,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="unless-for-negatives"></a>
-  Favor `unless` over `if !` for negative conditions (or flow control `or`).
+  Favor `unless` over `if !...` for negative conditions (or flow control `or`).
 <sup>[[link](#unless-for-negatives)]</sup>
 
   ```Ruby
@@ -827,7 +827,8 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="no-parens-if"></a>
-  Don't use parentheses around the condition of an `if/unless/while/until`.
+  Don't use parentheses around the condition of an
+  `if`/`unless`/`while`/`until`.
 <sup>[[link](#no-parens-if)]</sup>
 
   ```Ruby
@@ -846,7 +847,7 @@ Note that there is an exception to this rule, namely [safe assignment in
 condition](#safe-assignment-in-condition).
 
 * <a name="no-multiline-while-do"></a>
-  Do not use `while/until condition do` for multi-line `while/until`.
+  Do not use `while/until ... do` for multi-line `while`/`until`.
 <sup>[[link](#no-multiline-while-do)]</sup>
 
   ```Ruby
@@ -870,7 +871,7 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="while-as-a-modifier"></a>
-  Favor modifier `while/until` usage when you have a single-line body.
+  Favor modifier `while`/`until` usage when you have a single-line body.
 <sup>[[link](#while-as-a-modifier)]</sup>
 
   ```Ruby
@@ -896,7 +897,7 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="infinite-loop"></a>
-  Use `Kernel#loop` instead of `while/until` when you need an infinite loop.
+  Use `Kernel#loop` instead of `while`/`until` when you need an infinite loop.
 <sup>[[link](#infinite-loop)]</sup>
 
     ```ruby
@@ -916,8 +917,8 @@ condition](#safe-assignment-in-condition).
     ```
 
 * <a name="loop-with-break"></a>
-  Use `Kernel#loop` with `break` rather than `begin/end/until` or
-  `begin/end/while` for post-loop tests.
+  Use `Kernel#loop` with `break` rather than `begin`/`end`/`until` or
+  `begin`/`end`/`while` for post-loop tests.
 <sup>[[link](#loop-with-break)]</sup>
 
   ```Ruby
