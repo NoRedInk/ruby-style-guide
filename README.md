@@ -697,7 +697,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 <sup>[[link](#no-when-semicolons)]</sup>
 
 * <a name="bang-not-not"></a>
-  Use `!` instead of `not`.
+  Use `!` instead of `not` for boolean negation.
 <sup>[[link](#bang-not-not)]</sup>
 
   ```Ruby
@@ -731,29 +731,30 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   end
   ```
 
-* <a name="no-and-or-or"></a>
-  The `and` and `or` keywords are banned. It's just not worth it. Always use
-  `&&` and `||` instead.
-<sup>[[link](#no-and-or-or)]</sup>
+* <a name="and-or-not"></a>
+  The `and`, `or`, and `not` keywords are for flow control, not
+  conditional comparisons like `&&`, `||`, and `!`. They have a different
+  operator precedence to support this usage.
+<sup>[[link](#and-or-not)]</sup>
 
   ```Ruby
-  # bad
-  # boolean expression
-  if some_condition and some_other_condition
+  # bad:  conditional comparisons
+  if some_condition and not some_other_condition
     do_something
   end
 
-  # control flow
-  document.saved? or document.save!
+  # bad:  flow control
+  # same as: size = (ARGV.shift || abort "USAGE:  #{$PROGRAM_NAME} SIZE")
+  size = ARGV.shift || abort "USAGE:  #{$PROGRAM_NAME} SIZE"
 
-  # good
-  # boolean expression
-  if some_condition && some_other_condition
+  # good:  conditional comparisons
+  if some_condition && !some_other_condition
     do_something
   end
 
-  # control flow
-  document.saved? || document.save!
+  # good:  flow control
+  # same as: (size = ARGV.shift) or (abort "USAGE:  #{$PROGRAM_NAME} SIZE")
+  size = ARGV.shift or abort "USAGE:  #{$PROGRAM_NAME} SIZE"
   ```
 
 * <a name="no-multiline-ternary"></a>
