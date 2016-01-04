@@ -708,29 +708,6 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   x = !something
   ```
 
-* <a name="no-bang-bang"></a>
-  Avoid the use of `!!`.
-<sup>[[link](#no-bang-bang)]</sup>
-
-  ```Ruby
-  # bad
-  x = 'test'
-  # obscure nil check
-  if !!x
-    # body omitted
-  end
-
-  x = false
-  # double negation is useless on booleans
-  !!x # => false
-
-  # good
-  x = 'test'
-  unless x.nil?
-    # body omitted
-  end
-  ```
-
 * <a name="and-or-not"></a>
   The `and`, `or`, and `not` keywords are for flow control, not
   conditional comparisons like `&&`, `||`, and `!`. They have a different
