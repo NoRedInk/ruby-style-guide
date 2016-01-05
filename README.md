@@ -1973,8 +1973,7 @@ no parameters.
 <sup>[[link](#hash-space)]</sup>
 
 * <a name="english-syntax"></a>
-  Comments longer than a word are capitalized and use punctuation. Use [one
-  space](https://en.wikipedia.org/wiki/Sentence_spacing) after periods.
+  Longer comments should use proper capitalization and punctuation.
 <sup>[[link](#english-syntax)]</sup>
 
 * <a name="no-superfluous-comments"></a>
