@@ -1721,12 +1721,13 @@ no parameters.
 
 * <a name="map-find-select-reduce-size"></a>
   Prefer `map` over `collect`, `find` over `detect`, `select` over `find_all`,
-  `reduce` over `inject` and `size` over `length`. This is not a hard
-  requirement; if the use of the alias enhances readability, it's ok to use it.
-  The rhyming methods are inherited from Smalltalk and are not common in other
-  programming languages. The reason the use of `select` is encouraged over
-  `find_all` is that it goes together nicely with `reject` and its name is
-  pretty self-explanatory.
+  and `inject` over `reduce`. This is not a hard requirement; if the use of the
+  alias enhances readability, it's ok to use it. The rhyming methods are
+  inherited from Smalltalk and are not common in other programming languages.
+  The reason the use of `select` is encouraged over `find_all` is that it goes
+  together nicely with `reject` and its name is pretty self-explanatory.
+  `inject` has been in Ruby longer and thus is just more widely used than
+  `reduce`.
 <sup>[[link](#map-find-select-reduce-size)]</sup>
 
 * <a name="count-vs-size"></a>
