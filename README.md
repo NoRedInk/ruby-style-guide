@@ -1454,21 +1454,27 @@ no parameters.
   ```
 
 * <a name="proc-call"></a>
-  Prefer `proc.call()` over `proc[]` or `proc.()` for both lambdas and procs.
+  Prefer `proc.call()` or `proc[]` over `proc.()` for both lambdas and procs.
 <sup>[[link](#proc-call)]</sup>
 
   ```Ruby
-  # bad:  looks similar to Enumeration access
-  l = ->(v) { puts v }
-  l[1]
-
-  # also bad:  uncommon syntax
-  l = ->(v) { puts v }
+  # bad:  uncommon syntax
+  l = ->(v) do
+    puts v
+  end
   l.(1)
 
   # good
-  l = ->(v) { puts v }
+  l = ->(v) do
+    puts v
+  end
   l.call(1)
+
+  # good:  can substitute for places that expect a Hash
+  l = ->(v) do
+    puts v
+  end
+  l[1]
   ```
 
 * <a name="underscore-unused-vars"></a>
