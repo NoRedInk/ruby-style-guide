@@ -1565,21 +1565,21 @@ no parameters.
   ```
 
 * <a name="splat-arrays"></a>
-  Use `[*var]` or `Array()` instead of explicit `Array` check, when dealing
-  with a variable you want to treat as an Array, but you're not certain it's an
-  array.
+  Use `Array()` instead of an explicit `Array` check, when dealing with a
+  variable you want to treat as an `Array`, but you're not certain it is one.
 <sup>[[link](#splat-arrays)]</sup>
 
   ```Ruby
   # bad
-  paths = [paths] unless paths.is_a? Array
-  paths.each { |path| do_something(path) }
+  paths = [paths] unless paths.is_a?(Array)
+  paths.each do |path|
+    do_something(path)
+  end
 
   # good
-  [*paths].each { |path| do_something(path) }
-
-  # good (and a bit more readable)
-  Array(paths).each { |path| do_something(path) }
+  Array(paths).each do |path|
+    do_something(path)
+  end
   ```
 
 * <a name="ranges-or-between"></a>
