@@ -2434,6 +2434,7 @@ no parameters.
   end
   ```
 
+TODO:
 * <a name="def-self-class-methods"></a>
   Use `def self.method` to define class methods. This makes the code
   easier to refactor since the class name is not repeated.
@@ -2446,13 +2447,9 @@ no parameters.
       # body omitted
     end
 
-    # good
-    def self.some_other_method
-      # body omitted
-    end
-
-    # Also possible and convenient when you
-    # have to define many class methods.
+    # bad:  It's easy to miss that later methods, like second_method_etc(), are
+    # under this new scope.  Indention may be your only clue if `class << self`
+    # is off screen.
     class << self
       def first_method
         # body omitted
@@ -2461,6 +2458,11 @@ no parameters.
       def second_method_etc
         # body omitted
       end
+    end
+
+    # good
+    def self.some_other_method
+      # body omitted
     end
   end
   ```
