@@ -1307,18 +1307,27 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="no-cryptic-perlisms"></a>
-  Avoid using Perl-style special variables (like `$:`, `$;`, etc. ). They are
+  Avoid using Perl-style special variables (like `$:`, `$;`, etc.). They are
   quite cryptic and their use in anything but one-liner scripts is discouraged.
-  Use the human-friendly aliases provided by the `English` library.
+  Use the human-friendly aliases.  Some aliases require the `English` library.
+  The regular expression capture variables (`$1`, `$2`, etc.) are allowed.
 <sup>[[link](#no-cryptic-perlisms)]</sup>
 
   ```Ruby
   # bad
   $:.unshift File.dirname(__FILE__)
 
-  # good
-  require 'English'
+  # good:  English not needed
   $LOAD_PATH.unshift File.dirname(__FILE__)
+
+  # good
+  require "English"
+  $FIELD_SEPARATOR = ","
+  numbers = "1,2,3".split
+
+  # good:  regex capture variables
+  "Gray, James" =~ /\A(\w+),\s*(\w+)\z/
+  first, last = $2, $1
   ```
 
 * <a name="parens-no-spaces"></a>
