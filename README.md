@@ -1769,10 +1769,14 @@ no parameters.
 
   ```Ruby
   # bad
-  array.reverse.each { ... }
+  array.reverse.each do
+    ...
+  end
 
   # good
-  array.reverse_each { ... }
+  array.reverse_each do
+    ...
+  end
   ```
 
 ## Naming
