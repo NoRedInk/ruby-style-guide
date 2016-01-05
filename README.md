@@ -1018,36 +1018,58 @@ condition](#safe-assignment-in-condition).
   names.map(&:upcase)
   ```
 
-* <a name="single-line-blocks"></a>
-  Prefer `{...}` over `do...end` for single-line blocks.  Avoid using `{...}`
-  for multi-line blocks (multiline chaining is always ugly). Always use
-  `do...end` for "control flow" and "method definitions" (e.g. in Rakefiles and
-  certain DSLs).  Avoid `do...end` when chaining.
-<sup>[[link](#single-line-blocks)]</sup>
+* <a name="block-style"></a>
+  Use `{...}` when defining a block where the return value matters and
+  `do...end` when using a block for flow control or side effects.  Many guides
+  recommend `{...}` for single-line blocks and `do...end` for multiple lines,
+  but you can already tell that at a glance and it's helpful to signal the
+  intended usage instead.  That said, single-line `do...end` is awkward, so do
+  split those across multiple lines, even if it's short.
+<sup>[[link](#block-style)]</sup>
 
   ```Ruby
-  names = %w(Bozhidar Steve Sarah)
+  names = %w[bozhidar steve sarah]
 
-  # bad
-  names.each do |name|
-    puts name
+  # bad:  block return value matters
+  names.map do |name|
+    name.capitalize
   end
 
-  # good
-  names.each { |name| puts name }
+  # good:  map() always uses {...} because the return value always matters
+  names.map { |name| name.capitalize }
 
-  # bad
-  names.select do |name|
-    name.start_with?('S')
-  end.map { |name| name.upcase }
+  # bad:  block return value is ignored; used for side effects (printing)
+  names.each { |name| puts name.capitalize }
 
-  # good
-  names.select { |name| name.start_with?('S') }.map(&:upcase)
+  # passable:  awkward
+  names.each do |name| puts name.capitalize end
+
+  # good:  each() always uses do...end because the return value never matters
+  names.each do |name|
+    puts name.capitalize
+  end
+
+  # bad:  block return value matters
+  headers = File.open("names.csv") do |f|
+    f.gets
+  end
+
+  # bad:  block used for flow control
+  File.open("sorted_names.txt") { |f|
+    f.each_cons(2) do |first, last|
+      puts "#{first.strip} comes before #{last.strip}"
+    end
+  }
+
+  # good:  {...} and do...end clarify intent of open() usage
+  headers = File.open("names.csv") { |f| f.gets }
+
+  File.open("sorted_names.txt") do |f|
+    f.each_cons(2) do |first, last|
+      puts "#{first.strip} comes before #{last.strip}"
+    end
+  end
   ```
-
-  Some will argue that multiline chaining would look OK with the use of {...},
-  but they should ask themselves, is this code really readable and can the
-  blocks' contents be extracted into nifty methods?
 
 * <a name="block-argument"></a>
   Consider using explicit block argument to avoid writing block literal that
