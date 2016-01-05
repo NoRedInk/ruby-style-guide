@@ -1396,19 +1396,19 @@ condition](#safe-assignment-in-condition).
   l.call(1, 2)
 
   # correct, but looks extremely awkward
-  l = ->(a, b) do
+  l = ->(a, b) {
     tmp = a * 7
     tmp * b / 50
-  end
+  }
 
   # good
   l = ->(a, b) { a + b }
   l.call(1, 2)
 
-  l = lambda do |a, b|
+  l = lambda { |a, b|
     tmp = a * 7
     tmp * b / 50
-  end
+  }
   ```
 
 * <a name="stabby-lambda-with-args"></a>
