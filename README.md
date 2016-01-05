@@ -2284,22 +2284,29 @@ no parameters.
 
 * <a name="struct-new"></a>
   Consider using `Struct.new`, which defines the trivial accessors,
-  constructor and comparison operators for you.
+  constructor and comparison operators for you. (Just be aware that `Struct`
+  adds several convenience methods that you may not want in some cases.
+  An example is that you would prefer to know that some data class
+  is immutable and will not change, so the setters that `Struct`
+  automatically creates for all fields would be inappropriate.)
 <sup>[[link](#struct-new)]</sup>
 
   ```Ruby
   # good
   class Person
-    attr_accessor :first_name, :last_name
-
     def initialize(first_name, last_name)
       @first_name = first_name
       @last_name = last_name
     end
+
+    attr_accessor :first_name, :last_name
+
+    # any other methods...
   end
 
-  # better
+  # good
   Person = Struct.new(:first_name, :last_name) do
+    # any other methods...
   end
   ````
 
