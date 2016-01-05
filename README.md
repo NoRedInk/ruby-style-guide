@@ -1179,19 +1179,19 @@ condition](#safe-assignment-in-condition).
 <sup>[[link](#safe-assignment-in-condition)]</sup>
 
   ```Ruby
-  # bad (also a warning)
+  # bad
   if v = array.grep(/foo/)
     do_something(v)
     ...
   end
 
-  # good (MRI would still complain, but RuboCop won't)
+  # good
   if (v = array.grep(/foo/))
     do_something(v)
     ...
   end
 
-  # good
+  # passable
   v = array.grep(/foo/)
   if v
     do_something(v)
