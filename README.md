@@ -1100,7 +1100,7 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="no-explicit-return"></a>
-  Avoid `return` where not required for flow of control.
+  Avoid `return` where not required for flow control.
 <sup>[[link](#no-explicit-return)]</sup>
 
   ```Ruby
