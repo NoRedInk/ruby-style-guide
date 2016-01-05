@@ -2406,7 +2406,7 @@ no parameters.
 * <a name="visibility"></a>
   Assign proper visibility levels to methods (`private`, `protected`) in
   accordance with their intended usage. Don't go off leaving everything `public`
-  (which is the default). After all we're coding in Ruby now, not in Python.
+  (which is the default).
 <sup>[[link](#visibility)]</sup>
 
 * <a name="indent-public-private-protected"></a>
