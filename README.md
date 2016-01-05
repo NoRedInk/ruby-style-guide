@@ -1395,7 +1395,7 @@ condition](#safe-assignment-in-condition).
   l = lambda { |a, b| a + b }
   l.call(1, 2)
 
-  # correct, but looks extremely awkward
+  # passable:  awkward
   l = ->(a, b) {
     tmp = a * 7
     tmp * b / 50
