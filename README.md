@@ -1651,11 +1651,11 @@ no parameters.
     ```
 
 * <a name="no-BEGIN-blocks"></a>
-  Avoid the use of `BEGIN` blocks.
+  Avoid the use of `BEGIN` blocks outside of one-liners.
 <sup>[[link](#no-BEGIN-blocks)]</sup>
 
 * <a name="no-END-blocks"></a>
-  Do not use `END` blocks. Use `Kernel#at_exit` instead.
+  Do not use `END` blocks outside of one-liners. Use `Kernel#at_exit` instead.
 <sup>[[link](#no-END-blocks)]</sup>
 
   ```ruby
@@ -1669,7 +1669,7 @@ no parameters.
   ```
 
 * <a name="no-flip-flops"></a>
-  Avoid the use of flip-flops.
+  Avoid the use of flip-flops outside of one-liners.
 <sup>[[link](#no-flip-flops)]</sup>
 
 * <a name="no-nested-conditionals"></a>
