@@ -2300,14 +2300,10 @@ no parameters.
     end
 
     attr_accessor :first_name, :last_name
-
-    # any other methods...
   end
 
   # good
-  Person = Struct.new(:first_name, :last_name) do
-    # any other methods...
-  end
+  Person = Struct.new(:first_name, :last_name)
   ````
 
 * <a name="no-extend-struct-new"></a>
@@ -2319,10 +2315,13 @@ no parameters.
   ```Ruby
   # bad
   class Person < Struct.new(:first_name, :last_name)
+    # any other methods...
   end
 
   # good
-  Person = Struct.new(:first_name, :last_name)
+  Person = Struct.new(:first_name, :last_name) do
+    # any other methods...
+  end
   ````
 
 * <a name="factory-methods"></a>
