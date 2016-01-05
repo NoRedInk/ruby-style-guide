@@ -1267,10 +1267,10 @@ condition](#safe-assignment-in-condition).
   # ok
   something = something.downcase if something
 
-  # good
+  # passable
   something = something && something.downcase
 
-  # better
+  # good
   something &&= something.downcase
   ```
 
