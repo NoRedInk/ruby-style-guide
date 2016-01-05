@@ -1663,7 +1663,9 @@ no parameters.
   END { puts 'Goodbye!' }
 
   # good
-  at_exit { puts 'Goodbye!' }
+  at_exit do
+    puts 'Goodbye!'
+  end
   ```
 
 * <a name="no-flip-flops"></a>
