@@ -2434,7 +2434,6 @@ no parameters.
   end
   ```
 
-TODO:
 * <a name="def-self-class-methods"></a>
   Use `def self.method` to define class methods. This makes the code
   easier to refactor since the class name is not repeated.
