@@ -1443,10 +1443,14 @@ no parameters.
 
   ```Ruby
   # bad
-  p = Proc.new { |n| puts n }
+  p = Proc.new do |n|
+    puts n
+  end
 
   # good
-  p = proc { |n| puts n }
+  p = proc do |n|
+    puts n
+  end
   ```
 
 * <a name="proc-call"></a>
