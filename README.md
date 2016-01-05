@@ -2007,20 +2007,6 @@ no parameters.
   describing the problem.
 <sup>[[link](#annotate-keywords)]</sup>
 
-* <a name="indent-annotations"></a>
-  If multiple lines are required to describe the problem, subsequent lines
-  should be indented three spaces after the `#` (one general plus two for
-  indentation purpose).
-<sup>[[link](#indent-annotations)]</sup>
-
-  ```Ruby
-  def bar
-    # FIXME: This has crashed occasionally since v3.2.1. It may
-    #   be related to the BarBazUtil upgrade.
-    baz(:quux)
-  end
-  ```
-
 * <a name="rare-eol-annotations"></a>
   In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
