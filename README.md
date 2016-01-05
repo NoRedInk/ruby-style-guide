@@ -2268,13 +2268,14 @@ no parameters.
   ```
 
 * <a name="attr"></a>
-  Avoid the use of `attr`. Use `attr_reader` and `attr_accessor` instead.
+  Avoid the use of `attr` (now undocumented). Use `attr_reader` and
+  `attr_accessor` instead.
 <sup>[[link](#attr)]</sup>
 
   ```Ruby
-  # bad:  creates a single attribute accessor (deprecated in 1.9)
-  attr :something, true
-  attr :one, :two, :three # behaves as attr_reader
+  # bad:  creates a single attribute accessor
+  attr :something, true    # behaves as attr_accessor
+  attr :one, :two, :three  # behaves as attr_reader
 
   # good
   attr_accessor :something
