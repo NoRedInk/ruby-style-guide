@@ -2761,11 +2761,6 @@ resource cleanup when possible.
   end
   ```
 
-* <a name="standard-exceptions"></a>
-  Favor the use of exceptions for the standard library over introducing new
-  exception classes.
-<sup>[[link](#standard-exceptions)]</sup>
-
 ## Collections
 
 * <a name="literal-array-hash"></a>
