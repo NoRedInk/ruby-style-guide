@@ -2930,12 +2930,11 @@ resource cleanup when possible.
   batman[:is_evil] || true # => true
 
   # good:  fetch work correctly with falsy values
-  batman.fetch(:is_evil, true) # => false
+  batman.fetch(:is_evil) { true } # => false
   ```
 
 * <a name="use-hash-blocks"></a>
-  Prefer the use of the block instead of the default value in `Hash#fetch`
-  if the code that has to be evaluated may have side effects or be expensive.
+  Prefer the use of the block instead of the default value in `Hash#fetch`.
   <sup>[[link](#use-hash-blocks)]</sup>
 
   ```Ruby
