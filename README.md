@@ -3299,15 +3299,15 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  name = %q(Bruce Wayne)
-  time = %q(8 o'clock)
-  question = %q("What did you say?")
+  name = %q{Bruce Wayne}
+  time = %q{8 o'clock}
+  question = %q{"What did you say?"}
 
   # good
   name = "Bruce Wayne"
   time = "8 o'clock"
   question = '"What did you say?"'
-  quote = %q(<p class='quote'>"What did you say?"</p>)
+  quote = %q{<p class='quote'>"What did you say?"</p>}
   ```
 
 * <a name="percent-r"></a>
