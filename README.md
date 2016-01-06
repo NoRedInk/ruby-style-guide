@@ -2466,30 +2466,23 @@ no parameters.
   end
   ```
 
-* <a name="alias-method-lexically"></a>
-  Prefer `alias` when aliasing methods in lexical class scope as the
-  resolution of `self` in this context is also lexical, and it communicates
-  clearly to the user that the indirection of your alias will not be altered
-  at runtime or by any subclass unless made explicit.
-<sup>[[link](#alias-method-lexically)]</sup>
+* <a name="alias-method"></a>
+  Prefer `alias_method` when aliasing methods.  The alternative, `alias`, is a
+  keyword with unusual syntax.
+<sup>[[link](#alias-method)]</sup>
 
   ```Ruby
   class Westerner
     def first_name
       @names.first
     end
-
-    alias given_name first_name
+    alias_method :given_name, :first_name
   end
   ```
 
-  Since `alias`, like `def`, is a keyword, prefer bareword arguments over
-  symbols or strings. In other words, do `alias foo bar`, not
-  `alias :foo :bar`.
-
-  Also be aware of how Ruby handles aliases and inheritance: an alias
-  references the method that was resolved at the time the alias was defined;
-  it is not dispatched dynamically.
+  Be aware of how Ruby handles aliases: an alias is actually just a copy of the
+  method that was made at the time the alias was defined; it is not dispatched
+  dynamically.  This matters in cases like inheritance:
 
   ```Ruby
   class Fugitive < Westerner
@@ -2509,26 +2502,7 @@ no parameters.
     def first_name
       'Nobody'
     end
-
-    alias given_name first_name
-  end
-  ```
-
-* <a name="alias-method"></a>
-  Always use `alias_method` when aliasing methods of modules, classes, or
-  singleton classes at runtime, as the lexical scope of `alias` leads to
-  unpredictability in these cases.
-<sup>[[link](#alias-method)]</sup>
-
-  ```Ruby
-  module Mononymous
-    def self.included(other)
-      other.class_eval { alias_method :full_name, :given_name }
-    end
-  end
-
-  class Sting < Westerner
-    include Mononymous
+    alias_method :given_name, :first_name
   end
   ```
 
