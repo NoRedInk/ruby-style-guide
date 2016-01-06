@@ -3366,7 +3366,7 @@ resource cleanup when possible.
     class_eval "def use_relative_model_naming?; true; end", __FILE__, __LINE__
     ```
 
-  - `define_method` is preferable to `class_eval{ def ... }`
+  - `define_method` is preferable to `class_eval do def ... end`
 
 * <a name="eval-comment-docs"></a>
   When using `class_eval` (or other `eval`) with string interpolation, add a
