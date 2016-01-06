@@ -2851,10 +2851,10 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
+  hash = {'one' => 1, 'two' => 2, 'three' => 3}
 
   # good
-  hash = { one: 1, two: 2, three: 3 }
+  hash = {one: 1, two: 2, three: 3}
   ```
 
 * <a name="no-mutable-keys"></a>
@@ -2867,10 +2867,10 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  hash = { :one => 1, :two => 2, :three => 3 }
+  hash = {:one => 1, :two => 2, :three => 3}
 
   # good
-  hash = { one: 1, two: 2, three: 3 }
+  hash = {one: 1, two: 2, three: 3}
   ```
 
 * <a name="no-mixed-hash-syntaces"></a>
@@ -2881,10 +2881,10 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  { a: 1, 'b' => 2 }
+  {a: 1, 'b' => 2}
 
   # good
-  { :a => 1, 'b' => 2 }
+  {:a => 1, 'b' => 2}
   ```
 
 * <a name="hash-key"></a>
