@@ -3208,22 +3208,6 @@ resource cleanup when possible.
   /(?:first|second)/
   ```
 
-* <a name="no-perl-regexp-last-matchers"></a>
-  Don't use the cryptic Perl-legacy variables denoting last regexp group
-  matches (`$1`, `$2`, etc). Use `Regexp.last_match(n)` instead.
-<sup>[[link](#no-perl-regexp-last-matchers)]</sup>
-
-  ```Ruby
-  /(regexp)/ =~ string
-  ...
-
-  # bad
-  process $1
-
-  # good
-  process Regexp.last_match(1)
-  ```
-
 * <a name="no-numbered-regexes"></a>
   Avoid using numbered groups as it can be hard to track what they contain.
   Named groups can be used instead.
