@@ -2691,8 +2691,7 @@ no parameters.
 
   # good
   begin
-    # a blind rescue rescues from StandardError, not Exception as many
-    # programmers assume.
+    # a blind rescue rescues from StandardError, not Exception
   rescue => e
     # exception handling
   end
