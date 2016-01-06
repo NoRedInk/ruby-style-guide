@@ -60,17 +60,17 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
   ```Ruby
   # bad
-  puts 'foobar'; # superfluous semicolon
+  puts "foobar"; # superfluous semicolon
 
-  puts 'foo'; puts 'bar' # two expressions on the same line
+  puts "foo"; puts "bar" # two expressions on the same line
 
   # good
-  puts 'foobar'
+  puts "foobar"
 
-  puts 'foo'
-  puts 'bar'
+  puts "foo"
+  puts "bar"
 
-  puts 'foo', 'bar' # this applies to puts in particular
+  puts "foo", "bar" # this applies to puts in particular
   ```
 
 * <a name="single-line-classes"></a>
@@ -148,11 +148,11 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     ```Ruby
     # bad
     1 .. 3
-    'a' ... 'z'
+    "a" ... "z"
 
     # good
     1..3
-    'a'...'z'
+    "a"..."z"
     ```
 
 * <a name="indent-when-to-case"></a>
@@ -163,10 +163,10 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```Ruby
   # bad
   case
-    when song.name == 'Misty'
-      puts 'Not again!'
+    when song.name == "Misty"
+      puts "Not again!"
     when song.duration > 120
-      puts 'Too long!'
+      puts "Too long!"
     when Time.now.hour > 21
       puts "It's too late"
     else
@@ -175,10 +175,10 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
   # good
   case
-  when song.name == 'Misty'
-    puts 'Not again!'
+  when song.name == "Misty"
+    puts "Not again!"
   when song.duration > 120
-    puts 'Too long!'
+    puts "Too long!"
   when Time.now.hour > 21
     puts "It's too late"
   else
@@ -194,12 +194,12 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```Ruby
   # bad:  pretty convoluted
   kind = case year
-  when 1850..1889 then 'Blues'
-  when 1890..1909 then 'Ragtime'
-  when 1910..1929 then 'New Orleans Jazz'
-  when 1930..1939 then 'Swing'
-  when 1940..1950 then 'Bebop'
-  else 'Jazz'
+  when 1850..1889 then "Blues"
+  when 1890..1909 then "Ragtime"
+  when 1910..1929 then "New Orleans Jazz"
+  when 1930..1939 then "Swing"
+  when 1940..1950 then "Bebop"
+  else "Jazz"
   end
 
   result = if some_cond
@@ -210,12 +210,12 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
   # bad:  random indentation and all lines change with the variable name
   kind = case year
-         when 1850..1889 then 'Blues'
-         when 1890..1909 then 'Ragtime'
-         when 1910..1929 then 'New Orleans Jazz'
-         when 1930..1939 then 'Swing'
-         when 1940..1950 then 'Bebop'
-         else 'Jazz'
+         when 1850..1889 then "Blues"
+         when 1890..1909 then "Ragtime"
+         when 1910..1929 then "New Orleans Jazz"
+         when 1930..1939 then "Swing"
+         when 1940..1950 then "Bebop"
+         else "Jazz"
          end
 
   result = if some_cond
@@ -227,12 +227,12 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   # good (and a bit more width efficient)
   kind =
     case year
-    when 1850..1889 then 'Blues'
-    when 1890..1909 then 'Ragtime'
-    when 1910..1929 then 'New Orleans Jazz'
-    when 1930..1939 then 'Swing'
-    when 1940..1950 then 'Bebop'
-    else 'Jazz'
+    when 1850..1889 then "Blues"
+    when 1890..1909 then "Ragtime"
+    when 1910..1929 then "New Orleans Jazz"
+    when 1930..1939 then "Swing"
+    when 1940..1950 then "Bebop"
+    else "Jazz"
     end
 
   result =
@@ -308,12 +308,12 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
            - 2
 
   # passable
-  long_string = 'First part of the long string' \
-                ' and second part of the long string'
+  long_string = "First part of the long string" \
+                " and second part of the long string"
 
   # good
-  long_string = 'First part of the long string' +
-                ' and second part of the long string'
+  long_string = "First part of the long string" +
+                " and second part of the long string"
   ```
 
 * <a name="consistent-multi-line-chains"></a>
@@ -345,32 +345,32 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```Ruby
   # bad:  line is too long
   def send_mail(source)
-    Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
+    Mailer.deliver(to: "bob@example.com", from: "us@example.com", subject: "Important message", body: source.text)
   end
 
   # bad:  double indent
   def send_mail(source)
     Mailer.deliver(
-        to: 'bob@example.com',
-        from: 'us@example.com',
-        subject: 'Important message',
+        to: "bob@example.com",
+        from: "us@example.com",
+        subject: "Important message",
         body: source.text)
   end
 
   # bad:  random indention that can easily cause all lines to change
   def send_mail(source)
-    Mailer.deliver(to: 'bob@example.com',
-                   from: 'us@example.com',
-                   subject: 'Important message',
+    Mailer.deliver(to: "bob@example.com",
+                   from: "us@example.com",
+                   subject: "Important message",
                    body: source.text)
   end
 
   # good:  normal indent
   def send_mail(source)
     Mailer.deliver(
-      to: 'bob@example.com',
-      from: 'us@example.com',
-      subject: 'Important message',
+      to: "bob@example.com",
+      from: "us@example.com",
+      subject: "Important message",
       body: source.text
     )
   end
@@ -382,18 +382,18 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
   ```Ruby
   # bad:  single indent
-  menu_item = ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
-    'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
+  menu_item = ["Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam",
+    "Baked beans", "Spam", "Spam", "Spam", "Spam", "Spam"]
 
   # passable
   menu_item =
-    ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
-     'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
+    ["Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam",
+     "Baked beans", "Spam", "Spam", "Spam", "Spam", "Spam"]
 
   # good
   menu_item = [
-    'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
-    'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam'
+    "Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam", "Spam",
+    "Baked beans", "Spam", "Spam", "Spam", "Spam", "Spam"
   ]
   ```
 
@@ -500,18 +500,18 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
     puts "#{a}, #{b}, #{c}, #{d}"
   end
 
-  some_method('w', 'x') # => '1, 2, w, x'
-  some_method('w', 'x', 'y') # => 'w, 2, x, y'
-  some_method('w', 'x', 'y', 'z') # => 'w, x, y, z'
+  some_method("w", "x") # => "1, 2, w, x"
+  some_method("w", "x", "y") # => "w, 2, x, y"
+  some_method("w", "x", "y", "z") # => "w, x, y, z"
 
   # good
   def some_method(c, d, a = 1, b = 2)
     puts "#{a}, #{b}, #{c}, #{d}"
   end
 
-  some_method('w', 'x') # => 'w, x, 1, 2'
-  some_method('w', 'x', 'y') # => 'w, x, y, 2'
-  some_method('w', 'x', 'y', 'z') # => 'w, x, y, z'
+  some_method("w", "x") # => "w, x, 1, 2"
+  some_method("w", "x", "y") # => "w, x, y, 2"
+  some_method("w", "x", "y", "z") # => "w, x, y, z"
   ```
 
 * <a name="parallel-assignment"></a>
@@ -524,23 +524,23 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
 
   ```Ruby
   # bad
-  a, b, c, d = 'foo', 'bar', 'baz', 'foobar'
+  a, b, c, d = "foo", "bar", "baz", "foobar"
 
   # good
-  a = 'foo'
-  b = 'bar'
-  c = 'baz'
-  d = 'foobar'
+  a = "foo"
+  b = "bar"
+  c = "baz"
+  d = "foobar"
 
   # good:  swapping variable assignment
   # Swapping variable assignment is a special case because it will allow you to
   # swap the values that are assigned to each variable.
-  a = 'foo'
-  b = 'bar'
+  a = "foo"
+  b = "bar"
 
   a, b = b, a
-  puts a # => 'bar'
-  puts b # => 'foo'
+  puts a # => "bar"
+  puts b # => "foo"
 
   # good:  method return
   def multi_return
@@ -552,7 +552,7 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   # good:  use with splat
   first, *list = [1, 2, 3, 4]
 
-  hello_array = *'Hello'
+  hello_array = *"Hello"
 
   a = *(1..3)
 
@@ -813,16 +813,16 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```Ruby
   # bad
   unless success?
-    puts 'failure'
+    puts "failure"
   else
-    puts 'success'
+    puts "success"
   end
 
   # good
   if success?
-    puts 'success'
+    puts "success"
   else
-    puts 'failure'
+    puts "failure"
   end
   ```
 
@@ -950,7 +950,7 @@ condition](#safe-assignment-in-condition).
     # omitted
   end
 
-  temperance = Person.new('Temperance', 30)
+  temperance = Person.new("Temperance", 30)
   temperance.name
 
   puts temperance.age
@@ -967,10 +967,10 @@ condition](#safe-assignment-in-condition).
 
   ```Ruby
   # bad
-  user.set({ name: 'John', age: 45, permissions: { read: true } })
+  user.set({ name: "John", age: 45, permissions: { read: true } })
 
   # good
-  user.set(name: 'John', age: 45, permissions: { read: true })
+  user.set(name: "John", age: 45, permissions: { read: true })
   ```
 
 * <a name="no-dsl-decorating"></a>
@@ -997,13 +997,13 @@ condition](#safe-assignment-in-condition).
   Kernel.exit!()
   2.even?()
   fork()
-  'test'.upcase()
+  "test".upcase()
 
   # good
   Kernel.exit!
   2.even?
   fork
-  'test'.upcase
+  "test".upcase
   ```
 
 * <a name="single-action-blocks"></a>
@@ -1078,7 +1078,7 @@ condition](#safe-assignment-in-condition).
 <sup>[[link](#block-argument)]</sup>
 
   ```Ruby
-  require 'tempfile'
+  require "tempfile"
 
   # bad
   def with_tmp_dir
@@ -1227,13 +1227,13 @@ condition](#safe-assignment-in-condition).
 
   ```Ruby
   # bad
-  name = name ? name : 'Bozhidar'
+  name = name ? name : "Bozhidar"
 
   # bad
-  name = 'Bozhidar' unless name
+  name = "Bozhidar" unless name
 
-  # good:  set name to 'Bozhidar', only if it's nil or false
-  name ||= 'Bozhidar'
+  # good:  set name to "Bozhidar", only if it's nil or false
+  name ||= "Bozhidar"
   ```
 
 * <a name="no-double-pipes-for-bools"></a>
@@ -1299,10 +1299,10 @@ condition](#safe-assignment-in-condition).
 
   ```Ruby
   # bad:  eql? is the same as == for strings
-  'ruby'.eql? some_str
+  "ruby".eql? some_str
 
   # good
-  'ruby' == some_str
+  "ruby" == some_str
   1.0.eql? x # eql? makes sense here if want to differentiate between Fixnum and Float 1
   ```
 
@@ -1530,23 +1530,23 @@ no parameters.
 
   ```Ruby
   # bad
-  '%d %d' % [20, 10]
-  # => '20 10'
+  "%d %d" % [20, 10]
+  # => "20 10"
 
   # good
-  sprintf('%d %d', 20, 10)
-  # => '20 10'
+  sprintf("%d %d", 20, 10)
+  # => "20 10"
 
   # good
-  sprintf('%{first} %{second}', first: 20, second: 10)
-  # => '20 10'
+  sprintf("%{first} %{second}", first: 20, second: 10)
+  # => "20 10"
 
-  format('%d %d', 20, 10)
-  # => '20 10'
+  format("%d %d", 20, 10)
+  # => "20 10"
 
   # good
-  format('%{first} %{second}', first: 20, second: 10)
-  # => '20 10'
+  format("%{first} %{second}", first: 20, second: 10)
+  # => "20 10"
   ```
 
 * <a name="array-join"></a>
@@ -1556,12 +1556,12 @@ no parameters.
 
   ```Ruby
   # bad
-  %w[one two three] * ', '
-  # => 'one, two, three'
+  %w[one two three] * ", "
+  # => "one, two, three"
 
   # good
-  %w[one two three].join(', ')
-  # => 'one, two, three'
+  %w[one two three].join(", ")
+  # => "one, two, three"
   ```
 
 * <a name="splat-arrays"></a>
@@ -1660,11 +1660,11 @@ no parameters.
 
   ```ruby
   # bad
-  END { puts 'Goodbye!' }
+  END { puts "Goodbye!" }
 
   # good
   at_exit do
-    puts 'Goodbye!'
+    puts "Goodbye!"
   end
   ```
 
@@ -1746,7 +1746,7 @@ no parameters.
 
 * <a name="flat-map"></a>
   Use `flat_map` instead of `map` + `flatten`.  This does not apply for arrays
-  with a depth greater than 2, i.e.  if `users.first.songs == ['a', ['b','c']]`,
+  with a depth greater than 2, i.e. if `users.first.songs == ["a", ["b", "c"]]`,
   then use `map + flatten` rather than `flat_map`.  `flat_map` flattens the
   array by 1, whereas `flatten` flattens it all the way.
 <sup>[[link](#flat-map)]</sup>
@@ -1802,7 +1802,7 @@ no parameters.
 
   ```Ruby
   # bad
-  :'some symbol'
+  :"some symbol"
   :SomeSymbol
   :someSymbol
 
@@ -2353,27 +2353,27 @@ no parameters.
   # extend superclass
   class Duck < Animal
     def speak
-      puts 'Quack! Quack'
+      puts "Quack! Quack"
     end
   end
 
   # extend superclass
   class Dog < Animal
     def speak
-      puts 'Bau! Bau!'
+      puts "Bau! Bau!"
     end
   end
 
   # good
   class Duck
     def speak
-      puts 'Quack! Quack'
+      puts "Quack! Quack"
     end
   end
 
   class Dog
     def speak
-      puts 'Bau! Bau!'
+      puts "Bau! Bau!"
     end
   end
   ```
@@ -2385,7 +2385,7 @@ no parameters.
 
   ```Ruby
   class Parent
-    @@class_var = 'parent'
+    @@class_var = "parent"
 
     def self.print_class_var
       puts @@class_var
@@ -2393,10 +2393,10 @@ no parameters.
   end
 
   class Child < Parent
-    @@class_var = 'child'
+    @@class_var = "child"
   end
 
-  Parent.print_class_var # => will print 'child'
+  Parent.print_class_var # => will print "child"
   ```
 
   As you can see all the classes in a class hierarchy actually share one
@@ -2487,7 +2487,7 @@ no parameters.
   ```Ruby
   class Fugitive < Westerner
     def first_name
-      'Nobody'
+      "Nobody"
     end
   end
   ```
@@ -2500,7 +2500,7 @@ no parameters.
   ```Ruby
   class Fugitive < Westerner
     def first_name
-      'Nobody'
+      "Nobody"
     end
     alias_method :given_name, :first_name
   end
@@ -2516,9 +2516,9 @@ no parameters.
 
   ```Ruby
   begin
-    fail 'Oops'
+    fail "Oops"
   rescue => error
-    raise if error.message != 'Oops'
+    raise if error.message != "Oops"
   end
   ```
 
@@ -2529,10 +2529,10 @@ no parameters.
 
   ```Ruby
   # bad
-  fail RuntimeError, 'message'
+  fail RuntimeError, "message"
 
   # good:  signals a RuntimeError by default
-  fail 'message'
+  fail "message"
   ```
 
 * <a name="exception-class-messages"></a>
@@ -2542,12 +2542,12 @@ no parameters.
 
   ```Ruby
   # bad
-  fail SomeException.new('message')
-  # Note that there is no way to do `fail SomeException.new('message'), backtrace`.
+  fail SomeException.new("message")
+  # Note that there is no way to do `fail SomeException.new("message"), backtrace`.
 
   # good
-  fail SomeException, 'message'
-  # Consistent with `fail SomeException, 'message', backtrace`.
+  fail SomeException, "message"
+  # Consistent with `fail SomeException, "message", backtrace`.
   ```
 
 * <a name="no-return-ensure"></a>
@@ -2561,7 +2561,7 @@ no parameters.
   def foo
     fail
   ensure
-    return 'very bad idea'
+    return "very bad idea"
   end
   ```
 
@@ -2663,12 +2663,12 @@ no parameters.
   begin
     n / d
   rescue ZeroDivisionError
-    puts 'Cannot divide by 0!'
+    puts "Cannot divide by 0!"
   end
 
   # good
   if d.zero?
-    puts 'Cannot divide by 0!'
+    puts "Cannot divide by 0!"
   else
     n / d
   end
@@ -2734,7 +2734,7 @@ no parameters.
 <sup>[[link](#release-resources)]</sup>
 
   ```Ruby
-  f = File.open('testfile')
+  f = File.open("testfile")
   begin
     # .. process
   rescue
@@ -2751,12 +2751,12 @@ resource cleanup when possible.
 
   ```Ruby
   # bad:  you need to close the file descriptor explicitly
-  f = File.open('testfile')
+  f = File.open("testfile")
     # ...
   f.close
 
   # good:  the file descriptor is closed automatically
-  File.open('testfile') do |f|
+  File.open("testfile") do |f|
     # ...
   end
   ```
@@ -2785,7 +2785,7 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  STATES = ['draft', 'open', 'closed']
+  STATES = ["draft", "open", "closed"]
 
   # good
   STATES = %w[draft open closed]
@@ -2851,7 +2851,7 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  hash = {'one' => 1, 'two' => 2, 'three' => 3}
+  hash = {"one" => 1, "two" => 2, "three" => 3}
 
   # good
   hash = {one: 1, two: 2, three: 3}
@@ -2881,10 +2881,10 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  {a: 1, 'b' => 2}
+  {a: 1, "b" => 2}
 
   # good
-  {:a => 1, 'b' => 2}
+  {:a => 1, "b" => 2}
   ```
 
 * <a name="hash-key"></a>
@@ -2909,9 +2909,9 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch)]</sup>
 
   ```Ruby
-  heroes = {batman: 'Bruce Wayne', superman: 'Clark Kent'}
+  heroes = {batman: "Bruce Wayne", superman: "Clark Kent"}
   # bad:  if we make a mistake we might not spot it right away
-  heroes[:batman] # => 'Bruce Wayne'
+  heroes[:batman] # => "Bruce Wayne"
   heroes[:supermann] # => nil
 
   # good:  fetch raises a KeyError making the problem obvious
@@ -2924,7 +2924,7 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch-defaults)]</sup>
 
   ```Ruby
-  batman = {name: 'Bruce Wayne', is_evil: false}
+  batman = {name: "Bruce Wayne", is_evil: false}
 
   # bad:  if we just use || operator with falsy value we won't get the expected result
   batman[:is_evil] || true # => true
@@ -2938,7 +2938,7 @@ resource cleanup when possible.
   <sup>[[link](#use-hash-blocks)]</sup>
 
   ```Ruby
-  batman = {name: 'Bruce Wayne'}
+  batman = {name: "Bruce Wayne"}
 
   # bad:  if we use the default value, we eager evaluate it
   # so it can slow the program down if done multiple times
@@ -2955,11 +2955,11 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  email = data['email']
-  username = data['nickname']
+  email = data["email"]
+  username = data["nickname"]
 
   # good
-  email, username = data.values_at('email', 'nickname')
+  email, username = data.values_at("email", "nickname")
   ```
 
 * <a name="ordered-hashes"></a>
@@ -3015,13 +3015,13 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  email_with_name = user.name + ' <' + user.email + '>'
+  email_with_name = user.name + " <" + user.email + ">"
 
   # good
   email_with_name = "#{user.name} <#{user.email}>"
 
   # good
-  email_with_name = format('%s <%s>', user.name, user.email)
+  email_with_name = format("%s <%s>", user.name, user.email)
   ```
 
 * <a name="pad-string-interpolation"></a>
@@ -3037,39 +3037,22 @@ resource cleanup when possible.
   ```
 
 * <a name="consistent-string-literals"></a>
-  Adopt a consistent string literal quoting style. There are two popular
-  styles in the Ruby community, both of which are considered good:  single
-  quotes by default (Option A) and double quotes by default (Option B).
+  Prefer double-quotes unless your string literal contains `"` or escape
+  characters you want to suppress.  It's less hassle if you later need to
+  add escapes, use interpolation, or insert an apostrophe.
 <sup>[[link](#consistent-string-literals)]</sup>
 
-  * **(Option A)** Prefer single-quoted strings when you don't need
-    string interpolation or special symbols such as `\t`, `\n`, `'`,
-    etc.
+  ```Ruby
+  # bad
+  name = 'Bozhidar'
 
-    ```Ruby
-    # bad
-    name = "Bozhidar"
-
-    # good
-    name = 'Bozhidar'
-    ```
-
-  * **(Option B)** Prefer double-quotes unless your string literal
-    contains `"` or escape characters you want to suppress.
-
-    ```Ruby
-    # bad
-    name = 'Bozhidar'
-
-    # good
-    name = "Bozhidar"
-    ```
-
-  The string literals in this guide are aligned with the first style.
+  # good
+  name = "Bozhidar"
+  ```
 
 * <a name="no-character-literals"></a>
   Don't use the character literal syntax `?x`. Since Ruby 1.9 it's basically
-  redundant:  `?x` would interpreted as `'x'` (a string with a single character
+  redundant:  `?x` would interpreted as `"x"` (a string with a single character
   in it).
 <sup>[[link](#no-character-literals)]</sup>
 
@@ -3078,7 +3061,7 @@ resource cleanup when possible.
   char = ?c
 
   # good
-  char = 'c'
+  char = "c"
   ```
 
 * <a name="curlies-interpolate"></a>
@@ -3136,16 +3119,16 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  html = ''
-  html += '<h1>Page title</h1>'
+  html = ""
+  html += "<h1>Page title</h1>"
 
   paragraphs.each do |paragraph|
     html += "<p>#{paragraph}</p>"
   end
 
   # good and also fast
-  html = ''
-  html << '<h1>Page title</h1>'
+  html = ""
+  html << "<h1>Page title</h1>"
 
   paragraphs.each do |paragraph|
     html << "<p>#{paragraph}</p>"
@@ -3157,16 +3140,16 @@ resource cleanup when possible.
 <sup>[[link](#dont-abuse-gsub)]</sup>
 
     ```Ruby
-    url = 'http://example.com'
-    str = 'lisp-case-rules'
+    url = "http://example.com"
+    str = "lisp-case-rules"
 
     # bad
-    url.gsub('http://', 'https://')
-    str.gsub('-', '_')
+    url.gsub("http://", "https://")
+    str.gsub("-", "_")
 
     # good
-    url.sub('http://', 'https://')
-    str.tr('-', '_')
+    url.sub("http://", "https://")
+    str.tr("-", "_")
     ```
 
 * <a name="heredocs"></a>
@@ -3176,7 +3159,7 @@ resource cleanup when possible.
 <sup>[[link](#heredocs)]</sup>
 
   ```Ruby
-  code = <<-END.gsub(/^\s+\|/, '')
+  code = <<-END.gsub(/^\s+\|/, "")
     |def test
     |  some_method
     |  other_method
@@ -3189,7 +3172,7 @@ resource cleanup when possible.
 
 * <a name="no-regexp-for-plaintext"></a>
   Don't use regular expressions if you just need plain text search in string:
-  `string['text']`
+  `string["text"]`
 <sup>[[link](#no-regexp-for-plaintext)]</sup>
 
 * <a name="regexp-string-index"></a>
@@ -3199,7 +3182,7 @@ resource cleanup when possible.
   ```Ruby
   match = string[/regexp/]             # get content of matched regexp
   first_group = string[/text(grp)/, 1] # get content of captured group
-  string[/text (grp)/, 1] = 'replace'  # string => 'text replace'
+  string[/text (grp)/, 1] = "replace"  # string => "text replace"
   ```
 
 * <a name="non-capturing-regexp"></a>
@@ -3284,9 +3267,9 @@ resource cleanup when possible.
 <sup>[[link](#gsub-blocks)]</sup>
 
   ```Ruby
-  words = 'foo bar'
-  words.sub(/f/, 'f' => 'F') # => 'Foo bar'
-  words.gsub(/\w+/) { |word| word.capitalize } # => 'Foo Bar'
+  words = "foo bar"
+  words.sub(/f/, "f" => "F") # => "Foo bar"
+  words.gsub(/\w+/) { |word| word.capitalize } # => "Foo Bar"
   ```
 
 ## Percent Literals
@@ -3327,7 +3310,7 @@ resource cleanup when possible.
   question = %q("What did you say?")
 
   # good
-  name = 'Bruce Wayne'
+  name = "Bruce Wayne"
   time = "8 o'clock"
   question = '"What did you say?"'
   quote = %q(<p class='quote'>"What did you say?"</p>)
@@ -3403,7 +3386,7 @@ resource cleanup when possible.
   and `__LINE__`, so that your backtraces make sense:
 
     ```ruby
-    class_eval 'def use_relative_model_naming?; true; end', __FILE__, __LINE__
+    class_eval "def use_relative_model_naming?; true; end", __FILE__, __LINE__
     ```
 
   - `define_method` is preferable to `class_eval{ def ... }`
@@ -3417,7 +3400,7 @@ resource cleanup when possible.
   ```ruby
   # from activesupport/lib/active_support/core_ext/string/output_safety.rb
   UNSAFE_STRING_METHODS.each do |unsafe_method|
-    if 'String'.respond_to?(unsafe_method)
+    if "String".respond_to?(unsafe_method)
       class_eval <<-EOT, __FILE__, __LINE__ + 1
         def #{unsafe_method}(*params, &block)       # def capitalize(*params, &block)
           to_str.#{unsafe_method}(*params, &block)  #   to_str.capitalize(*params, &block)
@@ -3511,12 +3494,12 @@ resource cleanup when possible.
 <sup>[[link](#prefer-__send__)]</sup>
 
   ```ruby
-  require 'socket'
+  require "socket"
 
   u1 = UDPSocket.new
-  u1.bind('127.0.0.1', 4913)
+  u1.bind("127.0.0.1", 4913)
   u2 = UDPSocket.new
-  u2.connect('127.0.0.1', 4913)
+  u2.connect("127.0.0.1", 4913)
   # Won't send a message to the receiver obj.
   # Instead it will send a message via UDP socket.
   u2.send :sleep, 0
