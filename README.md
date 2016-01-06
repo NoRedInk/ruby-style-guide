@@ -2774,8 +2774,8 @@ resource cleanup when possible.
   hash = Hash.new
 
   # good
-  arr = []
-  hash = {}
+  arr = [ ]
+  hash = { }
   ```
 
 * <a name="percent-w"></a>
@@ -2789,7 +2789,7 @@ resource cleanup when possible.
   STATES = ['draft', 'open', 'closed']
 
   # good
-  STATES = %w(draft open closed)
+  STATES = %w[draft open closed]
   ```
 
 * <a name="percent-i"></a>
@@ -2803,7 +2803,7 @@ resource cleanup when possible.
   STATES = [:draft, :open, :closed]
 
   # good
-  STATES = %i(draft open closed)
+  STATES = %i[draft open closed]
   ```
 
 * <a name="no-trailing-array-commas"></a>
