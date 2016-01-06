@@ -2900,7 +2900,7 @@ resource cleanup when possible.
   hash.has_value?(value)
 
   # good
-  hash.key?(:test)
+  hash.key?(:test)  # or hash.include?(:test)
   hash.value?(value)
   ```
 
