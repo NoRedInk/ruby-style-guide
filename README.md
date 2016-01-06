@@ -3270,26 +3270,25 @@ resource cleanup when possible.
 ## Percent Literals
 
 * <a name="percent-q-shorthand"></a>
-  Use `%()`(it's a shorthand for `%Q`) for single-line strings which require
-  both interpolation and embedded double-quotes. For multi-line strings, prefer
-  heredocs.
+  Use `%Q{}` for single-line strings which require both interpolation and
+  embedded double-quotes. For multi-line strings, prefer heredocs.
 <sup>[[link](#percent-q-shorthand)]</sup>
 
   ```Ruby
   # bad:  no interpolation needed
-  %(<div class="text">Some text</div>)
+  %Q{<div class="text">Some text</div>}
   # should be '<div class="text">Some text</div>'
 
   # bad:  no double-quotes
-  %(This is #{quality} style)
+  %Q{This is #{quality} style}
   # should be "This is #{quality} style"
 
   # bad:  multiple lines
-  %(<div>\n<span class="big">#{exclamation}</span>\n</div>)
+  %Q{<div>\n<span class="big">#{exclamation}</span>\n</div>}
   # should be a heredoc.
 
   # good:  requires interpolation, has quotes, single line
-  %(<tr><td class="name">#{name}</td>)
+  %Q{<tr><td class="name">#{name}</td>}
   ```
 
 * <a name="percent-q"></a>
