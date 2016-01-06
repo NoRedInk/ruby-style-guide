@@ -3343,23 +3343,6 @@ resource cleanup when possible.
   string"` is the preferred way to create a symbol with spaces in it.
 <sup>[[link](#percent-s)]</sup>
 
-* <a name="percent-literal-braces"></a>
-  Prefer `()` as delimiters for all `%` literals, except `%r`. Since parentheses
-  often appear inside regular expressions in many scenarios a less common
-  character like `{` might be a better choice for a delimiter, depending on the
-  regexp's content.
-<sup>[[link](#percent-literal-braces)]</sup>
-
-  ```Ruby
-  # bad
-  %w[one two three]
-  %q{"Test's king!", John said.}
-
-  # good
-  %w(one two three)
-  %q("Test's king!", John said.)
-  ```
-
 ## Metaprogramming
 
 * <a name="no-needless-metaprogramming"></a>
