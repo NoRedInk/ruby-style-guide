@@ -2780,8 +2780,7 @@ resource cleanup when possible.
 
 * <a name="percent-w"></a>
   Prefer `%w` to the literal array syntax when you need an array of words
-  (non-empty strings without spaces and special characters in them).  Apply this
-  rule only to arrays with two or more elements.
+  (non-empty strings without spaces and special characters in them).
 <sup>[[link](#percent-w)]</sup>
 
   ```Ruby
@@ -2794,8 +2793,7 @@ resource cleanup when possible.
 
 * <a name="percent-i"></a>
   Prefer `%i` to the literal array syntax when you need an array of symbols
-  (and you don't need to maintain Ruby 1.9 compatibility). Apply this rule only
-  to arrays with two or more elements.
+  (and you don't need to maintain Ruby 1.9 compatibility).
 <sup>[[link](#percent-i)]</sup>
 
   ```Ruby
