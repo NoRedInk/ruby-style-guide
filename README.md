@@ -2635,7 +2635,8 @@ no parameters.
   ```
 
 * <a name="no-rescue-modifiers"></a>
-  Avoid using `rescue` in its modifier form.
+  Avoid using `rescue` in its modifier form. An exception can be made for
+  assignment of the error.
 <sup>[[link](#no-rescue-modifiers)]</sup>
 
   ```Ruby
@@ -2648,6 +2649,9 @@ no parameters.
   rescue Errno::ENOENT => ex
     handle_error(ex)
   end
+
+  # passable:  assigning the error
+  content_or_error = read_file rescue $!
   ```
 
 * <a name="no-exceptional-flows"></a>
