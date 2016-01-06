@@ -3154,11 +3154,22 @@ resource cleanup when possible.
 
 * <a name="heredocs"></a>
   When using heredocs for multi-line strings keep in mind the fact that they
-  preserve leading whitespace. It's a good practice to employ some margin based
-  on which to trim the excessive whitespace.
+  preserve leading whitespace by default. It's a good practice to employ
+  Ruby 2.3's `<<~` trimming heredoc syntax or use some margin indicator
+  to trim the excessive whitespace.
 <sup>[[link](#heredocs)]</sup>
 
   ```Ruby
+  # good:  requires Ruby 2.3+
+  code = <<~END
+    def test
+      some_method
+      other_method
+    end
+  END
+  # => "def test\n  some_method\n  other_method\nend\n"
+
+  # passable:  support older Ruby versions
   code = <<-END.gsub(/^\s+\|/, "")
     |def test
     |  some_method
