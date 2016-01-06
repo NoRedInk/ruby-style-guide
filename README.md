@@ -967,7 +967,7 @@ condition](#safe-assignment-in-condition).
 
   ```Ruby
   # bad
-  user.set({ name: "John", age: 45, permissions: { read: true } })
+  user.set({name: "John", age: 45, permissions: { read: true }})
 
   # good
   user.set(name: "John", age: 45, permissions: { read: true })
@@ -981,7 +981,7 @@ condition](#safe-assignment-in-condition).
   ```Ruby
   class Person < ActiveRecord::Base
     # bad
-    validates(:name, { presence: true, length: { within: 1..10 } })
+    validates(:name, {presence: true, length: { within: 1..10 }})
 
     # good
     validates :name, presence: true, length: { within: 1..10 }
