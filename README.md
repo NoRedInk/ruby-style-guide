@@ -3331,11 +3331,11 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  date = %x(date)
+  date = %x{date}
 
   # good
   date = `date`
-  echo = %x(echo `date`)
+  echo = %x{echo `date`}
   ```
 
 * <a name="percent-s"></a>
