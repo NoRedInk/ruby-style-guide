@@ -317,24 +317,25 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   ```
 
 * <a name="consistent-multi-line-chains"></a>
-  When continuing a chained method invocation on another line keep the `.`
-  on the second line.
+  When continuing a chained method invocation on another line,
+  include the `.` on the first line to indicate that the
+  expression continues.
 <sup>[[link](#consistent-multi-line-chains)]</sup>
 
   ```Ruby
-  # bad:  need to consult first line to understand second line
-  one.two.three.
-    four
-
-  # passable:  it's clear what's going on the second line
+  # bad:  makes the code harder to play with in a REPL
   one.two.three
     .four
 
-  # good:  all lines are more obvious now
-  one
-    .two
-    .three
-    .four
+  # passable:  irb friendly
+  one.two.three.
+    four
+
+  # good
+  one.
+    two.
+    three.
+    four
   ```
 
 * <a name="no-double-indent"></a>
