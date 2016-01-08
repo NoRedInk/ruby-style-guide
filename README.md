@@ -2068,7 +2068,7 @@ no parameters.
     # constants are next
     SOME_CONSTANT = 20
 
-    # followed by other macros (if any)
+    # followed by class level macros (if any)
     validates :name
 
     # public class methods are next in line
