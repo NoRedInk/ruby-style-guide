@@ -1828,6 +1828,10 @@ no parameters.
 * <a name="camelcase-classes"></a>
   Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP, RFC, XML
   uppercase.)
+
+  **Note**:  The autoloader in Rails expects acronyms to have an initial capital
+  only (`ApiWrapper` instead of `APIWrapper`), so it makes sense to use that
+  style in Rails code.
 <sup>[[link](#camelcase-classes)]</sup>
 
   ```Ruby
