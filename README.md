@@ -2231,12 +2231,12 @@ no parameters.
 
   ```Ruby
   class Person
+    attr_reader :first_name, :last_name
+
     def initialize(first_name, last_name)
       @first_name = first_name
       @last_name = last_name
     end
-
-    attr_reader :first_name, :last_name
 
     def to_s
       "#{@first_name} #{@last_name}"
@@ -2267,12 +2267,12 @@ no parameters.
 
   # good
   class Person
+    attr_reader :first_name, :last_name
+
     def initialize(first_name, last_name)
       @first_name = first_name
       @last_name = last_name
     end
-
-    attr_reader :first_name, :last_name
   end
   ```
 
@@ -2303,12 +2303,12 @@ no parameters.
   ```Ruby
   # good
   class Person
+    attr_accessor :first_name, :last_name
+
     def initialize(first_name, last_name)
       @first_name = first_name
       @last_name = last_name
     end
-
-    attr_accessor :first_name, :last_name
   end
 
   # good
