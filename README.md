@@ -1899,6 +1899,10 @@ no parameters.
   `self` or the arguments, `exit!` (doesn't run the finalizers like `exit`
   does), etc.) should end with an exclamation mark if there exists a safe
   version of that _dangerous_ method.
+
+  **Note**:  Rails mostly ignores this convention.  In Rails related code, `!`
+  is often added to methods that modify the receiver.  These method may or may
+  not have a non-modifying version.
 <sup>[[link](#dangerous-method-bang)]</sup>
 
   ```Ruby
