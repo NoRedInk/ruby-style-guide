@@ -2076,7 +2076,10 @@ no parameters.
     # constants are next
     SOME_CONSTANT = 20
 
-    # followed by class level macros (if any)
+    # afterwards we have attribute macros
+    attr_reader :name
+
+    # followed by other macros (if any)
     validates :name
 
     # public class methods are next in line
@@ -2086,9 +2089,6 @@ no parameters.
     # initialization goes between class methods and other instance methods
     def initialize
     end
-
-    # afterwards we have attribute macros
-    attr_reader :name
 
     # followed by other public instance methods
     def some_method
