@@ -827,6 +827,27 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   end
   ```
 
+* <a name="keep-unless-simple"></a>
+  Don't use `unless` with compound conditionals.
+<sup>[[link](#keep-unless-simple)]</sup>
+
+  ```Ruby
+  # bad
+  unless question? || other_question?
+    puts "confusing"
+  end
+
+  # good
+  if !question? && !other_question?
+    puts "easier to grok"
+  end
+
+  # good
+  unless question?
+    puts "simple"
+  end
+  ```
+
 * <a name="no-parens-if"></a>
   Don't use parentheses around the condition of an
   `if`/`unless`/`while`/`until`.
