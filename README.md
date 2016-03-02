@@ -848,6 +848,30 @@ This style guide is a minor refinement of [bbatsov's amazing work](https://githu
   end
   ```
 
+* <a name="side-effect-conditionals"></a>
+  Don't bury side effects in compound conditionals.
+<sup>[[link](#side-effect-conditionals)]</sup>
+
+  ```Ruby
+  # bad
+  if cool_dude && user.save && wearing_sunglasses
+    # ...
+  end
+
+  # good:  explicit change
+  if cool_dude
+    user_saved = user.save
+    if user_saved && wearing_sunglasses
+      # ...
+    end
+  end
+
+  # good:  simple conditional
+  if user.save
+    # ...
+  end
+  ```
+
 * <a name="no-parens-if"></a>
   Don't use parentheses around the condition of an
   `if`/`unless`/`while`/`until`.
