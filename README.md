@@ -2560,6 +2560,19 @@ no parameters.
   end
   ```
 
+* <a name="nested-modules-and-classes"></a>
+  When creating new nested modules or classes, avoid `::`. Only use `::` when referring to modules or classes in other files (see: [double colons](#double-colons)). When loading the file, if the left side of the `::` isn't defined, Ruby will choke. <sup>[[link](#nested-modules-and-classes)]</sup>
+
+  ```Ruby
+  # bad
+  class ParentModule::NaughtyInnerChildClass; end
+
+  # good
+  module ParentModule
+    class WellBehavedChildClass; end
+  end
+  ```
+
 ## Exceptions
 
 * <a name="fail-method"></a>
