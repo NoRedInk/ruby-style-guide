@@ -9,4 +9,5 @@
 * Exceptions
 * Collections
 * Strings
+* Regular Expressions
 
