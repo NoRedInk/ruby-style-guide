@@ -6,4 +6,5 @@
 * Comments
    * Comment Annotations
 * Classes & Modules
+* Exceptions
 
