@@ -7,4 +7,5 @@
    * Comment Annotations
 * Classes & Modules
 * Exceptions
+* Collections
 
