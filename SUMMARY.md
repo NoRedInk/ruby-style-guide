@@ -8,4 +8,5 @@
 * Classes & Modules
 * Exceptions
 * Collections
+* Strings
 
