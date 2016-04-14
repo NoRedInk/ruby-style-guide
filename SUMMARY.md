@@ -2,7 +2,7 @@
 
 * [Source Code Layout](source_code_layout.md)
 * [Syntax](syntax.md)
-* Naming
+* [Naming](naming.md)
 * Comments
    * Comment Annotations
 * Classes & Modules
