@@ -1,7 +1,7 @@
 # Summary
 
 * [Source Code Layout](source_code_layout.md)
-* Syntax
+* [Syntax](syntax.md)
 * Naming
 * Comments
    * Comment Annotations
