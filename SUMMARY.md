@@ -1,4 +1,4 @@
 # Summary
 
-* Source Code Layout
+* [Source Code Layout](source_code_layout.md)
 
