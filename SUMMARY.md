@@ -6,10 +6,10 @@
 * [Comments](comments.md)
    * [Comment Annotations](comment_annotations.md)
 * [Classes & Modules](classes_and_modules.md)
-* Exceptions
-* Collections
-* Strings
-* Regular Expressions
-* Percent Literals
-* Metaprogramming
-* Misc
+* [Exceptions](exceptions.md)
+* [Collections](collections.md)
+* [Strings](strings.md)
+* [Regular Expressions](regular_expressions.md)
+* [Percent Literals](percent_literals.md)
+* [Metaprogramming](metaprogramming.md)
+* [Misc](misc.md)
