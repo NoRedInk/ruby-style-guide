@@ -1,5 +1,10 @@
 # Comments
 
+* <a name="function-comments"></a>
+  Every public-facing function should have a comment
+  <sup>[[link](#function-comments)]</sup>
+
+
 * <a name="no-comments"></a>
   Write self-documenting code and ignore the rest of this section. Seriously!
 <sup>[[link](#no-comments)]</sup>
